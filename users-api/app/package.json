@@ -1,0 +1,35 @@
+{
+  "name": "chatapp-users",
+  "version": "1.0.0",
+  "description": "Users API for the Distributed Systems project",
+  "scripts": {
+    "start": "nodemon -L server.js",
+    "lint": "eslint . --ext .js --quiet"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguelfrde/chatapp-users.git"
+  },
+  "keywords": [],
+  "author": "Miguel Flores Ruiz de Eguino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miguelfrde/chatapp-users/issues"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "cors": "^2.7.1",
+    "debug": "^2.2.0",
+    "express": "^4.13.3",
+    "mongoose": "^4.4.0",
+    "morgan": "^1.6.1"
+  },
+  "preferGlobal": "true",
+  "devDependencies": {
+    "eslint": "^2.0.0-beta.1",
+    "nodemon": "^1.9.1"
+  }
+}

@@ -1,0 +1,13 @@
+<ion-content id="login">
+  <ion-row padding>
+    <h1>Welcome!</h1>
+  </ion-row>
+
+  <ion-row padding>
+    <ion-input type="text" placeholder="Username" [(ngModel)]="username"></ion-input>
+  </ion-row>
+
+  <ion-row padding>
+    <button block (click)="login($event)">Log In</button>
+  </ion-row>
+</ion-content>

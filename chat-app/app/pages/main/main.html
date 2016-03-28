@@ -1,0 +1,25 @@
+<ion-navbar *navbar primary>
+  <ion-title>Chat App</ion-title>
+  <ion-buttons end>
+    <button (click)="logout($event)">
+      Logout
+    </button>
+  </ion-buttons>
+</ion-navbar>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="#conversation of conversations" (click)="goToConversation($event, conversation)">
+      <ion-avatar item-left>
+        <img [src]="conversation.other.picture">
+      </ion-avatar>
+      <h2 class="conversation-username">{{conversation.other.username}}</h2>
+      <span class="message-time">{{conversation.lastMessage.time}}</span>
+      <p class="cut-message-content">{{conversation.lastMessage.content}}</p>
+    </button>
+  </ion-list>
+
+	<button fab fab-bottom fab-right (click)="showAddContact($event)">
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-content>

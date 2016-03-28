@@ -1,0 +1,42 @@
+users-api:
+  build: users-api
+  ports:
+    - "5000:5000"
+  volumes:
+    - "./users-api/app:/app"
+  links:
+    - mongo
+
+chat-server:
+  build: chat-server
+  ports:
+    - "3000:3000"
+  volumes:
+    - "./chat-server/app:/app"
+
+notifications-api:
+  build: pull-notifications
+  ports:
+    - "8000:8000"
+  volumes:
+    - "./pull-notifications/app:/app"
+  links:
+    - mongo
+  environment:
+    SERVER: api
+
+notifications-rpc:
+  build: pull-notifications
+  ports:
+    - "9090:9090"
+  volumes:
+    - "./pull-notifications/app:/app"
+  links:
+    - mongo
+  environment:
+    SERVER: thrift
+
+mongo:
+  image: mongo
+  ports:
+    - "27017:27017"

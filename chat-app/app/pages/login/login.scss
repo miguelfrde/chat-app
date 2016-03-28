@@ -1,0 +1,12 @@
+@import "../../theme/app.variables";
+
+#login {
+  h1 {
+    margin: 0 auto;
+  }
+
+  ion-input {
+    border: 1px solid map-get($colors, light);
+    border-radius: 0.2rem;
+  }
+}

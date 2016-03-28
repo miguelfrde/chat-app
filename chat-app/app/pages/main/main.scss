@@ -1,0 +1,16 @@
+.cut-message-content {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  clear: both;
+}
+
+.conversation-username {
+  float: left;
+}
+
+.message-time {
+  float: right;
+  color: #666;
+  font-size: 1.4rem;
+}

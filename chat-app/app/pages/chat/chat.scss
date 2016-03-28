@@ -1,0 +1,20 @@
+@import "../../theme/app.variables";
+
+.send-message-input {
+  background: white;
+}
+
+.full-message {
+  white-space: normal;
+  clear: both;
+}
+
+.img-message {
+  clear: both;
+  display: block;
+}
+
+.send-button, .camera-button {
+  margin: 0;
+  margin-left: -1rem;
+}

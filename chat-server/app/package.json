@@ -1,0 +1,24 @@
+{
+  "name": "chat-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon -L server.js"
+  },
+  "author": "Miguel Flores Ruiz de Eguino",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "jsonwebtoken": "^5.7.0",
+    "morgan": "^1.7.0",
+    "socket.io": "^1.4.5",
+    "socketio-jwt": "^4.3.4",
+    "thrift": "^0.9.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.1"
+  }
+}

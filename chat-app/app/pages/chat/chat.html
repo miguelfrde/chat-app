@@ -1,0 +1,43 @@
+<ion-navbar *navbar primary>
+  <ion-title>{{other.username}}</ion-title>
+</ion-navbar>
+
+<ion-content id="chat">
+  <ion-list *ngIf="people">
+    <ion-item *ngFor="#message of conversation">
+      <ion-avatar item-left>
+        <img [src]="people[message.from].picture">
+      </ion-avatar>
+      <h2 class="conversation-username">{{people[message.from].username}}</h2>
+      <span class="message-time">{{timestampToString(message.timestamp)}}</span>
+      <p class="full-message" *ngIf="message.type === 'text'">{{message.content}}</p>
+      <img class="img-message" *ngIf="message.type === 'picture'" src="data:image/jpeg;base64,{{message.content}}">
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-toolbar light position="bottom" class="send-message">
+  <ion-row center>
+    <ion-col width-10>
+      <button clear class="camera-button" (click)="sendPicture($event)">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </ion-col>
+
+    <ion-col width-80>
+      <ion-input
+        type="text"
+        [(ngModel)]="newMessage"
+        placeholder="Send message..."
+        class="send-message-input"
+        (keydown.enter)="sendText($event)">
+      </ion-input>
+    </ion-col>
+
+    <ion-col width-10>
+      <button clear class="send-button" (click)="sendText($event)">
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-toolbar>
